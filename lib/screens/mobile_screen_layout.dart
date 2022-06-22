@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/colors.dart';
+import 'package:whatsapp_clone/screens/call_screen.dart';
+import 'package:whatsapp_clone/screens/status_screen.dart';
 import 'package:whatsapp_clone/widgets/contacts_list.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
 
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   tabController = TabController(vsync: this, length: 3);
+  // }
+
   @override
   Widget build(BuildContext context) {
-    // for tabs, we declared the tab bar later on
+    // for tabs, we declared the tabbar later on
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -52,7 +60,12 @@ class MobileScreenLayout extends StatelessWidget {
             ],
           ),
         ),
-        body: const ContactsList(),
+        body: const TabBarView(children: [
+          ContactsList(),
+          StatusScreen(),
+          CallScreen(),
+        ]),
+        // const ContactsList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: tabColor,
