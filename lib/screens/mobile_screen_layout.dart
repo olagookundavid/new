@@ -7,12 +7,6 @@ import 'package:whatsapp_clone/widgets/contacts_list.dart';
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   tabController = TabController(vsync: this, length: 3);
-  // }
-
   @override
   Widget build(BuildContext context) {
     // for tabs, we declared the tabbar later on
@@ -60,19 +54,12 @@ class MobileScreenLayout extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(children: [
-          ContactsList(),
-          StatusScreen(),
-          CallScreen(),
-        ]),
-        // const ContactsList(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: tabColor,
-          child: const Icon(
-            Icons.comment,
-            color: Colors.grey,
-          ),
+        body: const TabBarView(
+          children: [
+            ContactsList(),
+            StatusScreen(),
+            CallScreen(),
+          ],
         ),
       ),
     );
